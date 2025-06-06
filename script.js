@@ -3,6 +3,8 @@ const amount = document.getElementById("amount");
 const expense = document.getElementById("expense");
 const category = document.getElementById("category");
 
+const expenseList = document.querySelector("ul");
+
 amount.oninput = () =>{
     let value = amount.value.replace(/\D/g, "");
     amount.value = value; 
@@ -11,6 +13,7 @@ amount.oninput = () =>{
 
     amount.value = FormatCurrency(value);
 }
+
 function FormatCurrency(value){
 value = value.toLocaleString("pt-br", {
     style: "currency",
@@ -36,6 +39,26 @@ const newExpense = {
     })
     
 }
-console.log(newExpense);
+expenseAdd(newExpense);
 }
 
+function expenseAdd(newExspense){
+    try {
+        // Cria um elemento html li e adiciona na classe "expense"
+        const expenseItem = document.createElement("li");
+        expenseItem.classList.add("expense");
+        
+        //cria a imagem e define o src e alt
+       const expenseIcon = document.createElement("img");
+        expenseIcon.setAttribute("src",`img/${newExspense.category_id}.svg`)
+        expenseIcon.setAttribute("alt", newExspense.category_name);
+        //Adiciona a imagem na li criada
+        expenseItem.append(expenseIcon);
+        //Adiciona a li na ul referenciada no topo do codigo
+        expenseList.append(expenseItem)
+        
+    }catch (error) {
+      alert("Erro ao adicionar despesa: " );
+    }
+
+}
