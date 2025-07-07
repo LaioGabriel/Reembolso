@@ -61,4 +61,5 @@ function expenseAdd(newExspense){
       alert("Erro ao adicionar despesa: " );
     }
 
+   
 }
