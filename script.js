@@ -7,10 +7,7 @@ const expenseList = document.querySelector("ul");
 
 amount.oninput = () =>{
     let value = amount.value.replace(/\D/g, "");
-    amount.value = value; 
     value = Number(value) / 100; 
-
-
     amount.value = FormatCurrency(value);
 }
 
@@ -52,13 +49,34 @@ function expenseAdd(newExspense){
        const expenseIcon = document.createElement("img");
         expenseIcon.setAttribute("src",`img/${newExspense.category_id}.svg`)
         expenseIcon.setAttribute("alt", newExspense.category_name);
+
+        //Cria um elemento html span e adiciona o valor da despesa
+        const expenseInfo = document.createElement("div");
+        expenseInfo.classList.add("expense-info");
+
+        //Cria um elemento html strong e adiciona o nome da despesa
+        const expenseName = document.createElement("strong");
+        expenseName.textContent = newExspense.expense;
+
+        //Cria um elemento html span e adiciona o nome da categoria
+        const expenseCategory = document.createElement("span");
+        expenseCategory.textContent = newExspense.category_name;
+
+
+
+        expenseInfo.append(expenseName, expenseCategory);
+        
         //Adiciona a imagem na li criada
         expenseItem.append(expenseIcon);
         //Adiciona a li na ul referenciada no topo do codigo
         expenseList.append(expenseItem)
+        //Adiciona o valor da despesa na li criada
+        expenseItem.append(expenseInfo)
+       
+
         
     }catch (error) {
-      alert("Erro ao adicionar despesa: " );
+      alert("Erro ao adicionar despesa, recarregue a página e tente novamente, se o erro se repetir favor contatar o suporte." );
     }
 
    
