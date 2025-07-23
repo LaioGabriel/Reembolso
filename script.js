@@ -39,45 +39,54 @@ const newExpense = {
 expenseAdd(newExpense);
 }
 
-function expenseAdd(newExspense){
+function expenseAdd(newExpense) {
     try {
-        // Cria um elemento html li e adiciona na classe "expense"
-        const expenseItem = document.createElement("li");
-        expenseItem.classList.add("expense");
-        
-        //cria a imagem e define o src e alt
-       const expenseIcon = document.createElement("img");
-        expenseIcon.setAttribute("src",`img/${newExspense.category_id}.svg`)
-        expenseIcon.setAttribute("alt", newExspense.category_name);
+        // Cria o elemento para a adicionar o item (li) na lista (ul)
+        const expenseItem = document.createElement("li")
+        expenseItem.classList.add("expense")
 
-        //Cria um elemento html span e adiciona o valor da despesa
-        const expenseInfo = document.createElement("div");
-        expenseInfo.classList.add("expense-info");
+        // Cria o ícone da categoria
+        const expenseIcon = document.createElement("img")
+        expenseIcon.setAttribute("src", `img/${newExpense.category_id}.svg`)
+        expenseIcon.setAttribute("alt", newExpense.category_name)
 
-        //Cria um elemento html strong e adiciona o nome da despesa
-        const expenseName = document.createElement("strong");
-        expenseName.textContent = newExspense.expense;
+        // Cria a info da despesa
+        const expenseInfo = document.createElement("div")
+        expenseInfo.classList.add("expense-info")
 
-        //Cria um elemento html span e adiciona o nome da categoria
-        const expenseCategory = document.createElement("span");
-        expenseCategory.textContent = newExspense.category_name;
+        // Cria o nome da despesa
+        const expenseName = document.createElement("strong")
+        expenseName.textContent = newExpense.expense
+
+        // Cria a categoria da despesa
+        const expenseCategory = document.createElement("span")
+        expenseCategory.textContent = newExpense.category_name
+
+        // Adiciona o nome e a categoria na div das informações da despesa
+        expenseInfo.append(expenseName, expenseCategory)
+
+        // Criando o valor da despesa
+        const expenseAmount = document.createElement("span")
+        expenseAmount.classList.add("expense-amount")
+        expenseAmount.innerHTML = `<small>R$</small>${newExpense.amount.toUpperCase().replace("R$", "")}`
+        //ICONE DE REMOVER
+        const removeIcon = document.createElement("img");
+        removeIcon.classList.add("remove-icon");
+        removeIcon.setAttribute("src", "img/remove.svg");
+        removeIcon.setAttribute("alt", "Remover despesa");
 
 
+        // Adiciona as informações no item
+        expenseItem.append(expenseIcon, expenseInfo, expenseAmount, removeIcon)
 
-        expenseInfo.append(expenseName, expenseCategory);
-        
-        //Adiciona a imagem na li criada
-        expenseItem.append(expenseIcon);
-        //Adiciona a li na ul referenciada no topo do codigo
+        // Adiciona o item na lista
         expenseList.append(expenseItem)
-        //Adiciona o valor da despesa na li criada
-        expenseItem.append(expenseInfo)
-       
 
-        
-    }catch (error) {
-      alert("Erro ao adicionar despesa, recarregue a página e tente novamente, se o erro se repetir favor contatar o suporte." );
+    } catch (error) {
+        alert("Não foi possível atualizar a lista de despesas.")
+        console.log(error)
     }
 
-   
 }
+   
+
