@@ -17,7 +17,7 @@ Este projeto é uma aplicação web simples e elegante que permite o cadastro e 
 
 ## 📷 Preview
 
-![preview](./img/screenshot.png) <!-- Adicione essa imagem para mostrar uma prévia visual do app -->
+![preview](./img/ProjScreen) 
 
 ---
 
