@@ -17,7 +17,8 @@ Este projeto é uma aplicação web simples e elegante que permite o cadastro e 
 
 ## 📷 Preview
 
-![preview da aplicação](./img/preview.jpg)
+![Imagem do WhatsApp de 2025-07-24 à(s) 12 19 17_bf0859e6](https://github.com/user-attachments/assets/93cbe292-ef4b-4418-82b5-40a6753d9aff)
+
 
 ---
 
