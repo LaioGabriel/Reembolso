@@ -34,10 +34,10 @@ Este projeto é uma aplicação web simples e elegante que permite o cadastro e 
 ## 🗂️ Estrutura do Projeto
 
 📦 Reembolso
-├── index.html # Estrutura principal
-├── styles.css # Estilização visual
-├── script.js # Funcionalidade dinâmica
-└── img/ # Ícones de categoria, logo e remover
+├── index.html # Estrutura principal <br>
+├── styles.css # Estilização visual <br>
+├── script.js # Funcionalidade dinâmica <br>
+└── img/ # Ícones de categoria, logo e remover <br>
 
 👤 Autor
 Laio Gabriel
