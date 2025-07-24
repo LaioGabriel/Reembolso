@@ -2,8 +2,9 @@ const form = document.querySelector("form");
 const amount = document.getElementById("amount");
 const expense = document.getElementById("expense");
 const category = document.getElementById("category");
-
+const expenseTotal = document.querySelector("aside header h2");
 const expenseList = document.querySelector("ul");
+const expenseQuantity = document.querySelector("aside header p span");
 
 amount.oninput = () =>{
     let value = amount.value.replace(/\D/g, "");
@@ -81,6 +82,8 @@ function expenseAdd(newExpense) {
 
         // Adiciona o item na lista
         expenseList.append(expenseItem)
+        updateTotal();
+        formCLear();
 
     } catch (error) {
         alert("Não foi possível atualizar a lista de despesas.")
@@ -89,4 +92,47 @@ function expenseAdd(newExpense) {
 
 }
    
+function updateTotal() {
+    try{ 
+        const items = expenseList.children
+        expenseQuantity.textContent = `${items.length} ${items.length > 1 ? "despesas" : "despesa"}`
 
+        let total = 0;
+    for(let i = 0; i < items.length; i++) {
+        const itemAmount = items[i].querySelector(".expense-amount")
+        let value = itemAmount.textContent.replace(/[^\d,]/g, "").replace(",", ".")
+        value = parseFloat(value); 
+        if (!isNaN(value)) {
+            total += Number(value)  
+        }else{
+            alert("Valor inválido encontrado na lista de despesas.")
+        }
+
+    }
+
+    const symbolBRL = document.createElement("small")
+    symbolBRL.textContent = "R$"
+    expenseTotal.innerHTML = ""
+    
+   total = FormatCurrency(total).toUpperCase().replace("R$", "")
+   expenseTotal.append(symbolBRL, total)
+     
+    }catch (error) {
+        console.log(error) 
+        alert("Não foi possível atualizar o total de despesas.")
+    }
+    
+}  
+expenseList.onclick = (event) => {
+    if(event.target.classList.contains("remove-icon")) {
+        const item = event.target.closest("li")
+        item.remove()
+        updateTotal()
+    }
+} 
+
+function formCLear() {
+    form.reset()
+    amount.value = ""
+    amount.oninput()
+}
