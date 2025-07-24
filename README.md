@@ -39,7 +39,7 @@ Este projeto é uma aplicação web simples e elegante que permite o cadastro e 
 ├── script.js # Funcionalidade dinâmica <br>
 └── img/ # Ícones de categoria, logo e remover <br>
 
-👤 Autor
-Laio Gabriel
-📧 Email: laiogabriel110604@gmail.com
+👤 Autor <br>
+Laio Gabriel <br>
+📧 Email: laiogabriel110604@gmail.com <br>
 🔗 GitHub: @LaioGabriel
