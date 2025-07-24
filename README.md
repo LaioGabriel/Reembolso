@@ -17,7 +17,8 @@ Este projeto é uma aplicação web simples e elegante que permite o cadastro e 
 
 ## 📷 Preview
 
-C:\Users\T-GAMER\Documents\Projetos\ProjetoRefund\img\Preview.jpg
+![Preview da aplicação](./img/Preview.jpg)
+
 
 
 ---
