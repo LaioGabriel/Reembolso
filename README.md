@@ -17,7 +17,7 @@ Este projeto é uma aplicação web simples e elegante que permite o cadastro e 
 
 ## 📷 Preview
 
-![Imagem do WhatsApp de 2025-07-24 à(s) 12 19 17_bf0859e6](https://github.com/user-attachments/assets/93cbe292-ef4b-4418-82b5-40a6753d9aff)
+C:\Users\T-GAMER\Documents\Projetos\ProjetoRefund\img\Preview.jpg
 
 
 ---
